@@ -14,10 +14,21 @@ string pieceModel[6] = {
 
 class pieces
 {
+private:
 	string pieceColor; //0 is black , 1 is white
 	string pieceRank;
 	static int whitePiecesCounter;
 	static int blackPiecesCounter;
+protected:
+	bool Availability[16];	/*
+							pawn = 8,9,10,11,12,13,14,15
+							king = 0
+							queen = 1
+							bishop = 2,5
+							knight = 3,6
+							rook = 4,7
+							*/	
+
 
 public:
 	pieces(int Cmodel = 5, bool Ccolor = 0)
@@ -61,6 +72,7 @@ public:
 	}
 
 	virtual void movments() = 0;
+
 };
 int pieces::whitePiecesCounter = 0;
 int pieces::blackPiecesCounter = 0;
