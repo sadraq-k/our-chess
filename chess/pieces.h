@@ -111,12 +111,16 @@ istream& operator>>(istream& in , VERTICAL& y){
 
 SQUARECOORDINATE boardChess[8][8];
 
+void emptysquareboard(){
+
+
 for (int i = 2; i < 8; i++)
 {
 	for (int j  = 0; j < 8; j++)
 	{
-		boardChess[8][8].X = emptysquarex;
-		boardChess[8][8].Y = emptysquarey;
+		boardChess[i][j].X = emptysquarex;
+		boardChess[i][j].Y = emptysquarey;
 	}
+}
 }	
 	
