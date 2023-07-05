@@ -12,6 +12,8 @@ string pieceModel[6] = {
 	/*Sarbaz*/	"Pawn"
 };
 
+
+
 class pieces
 {
 private:
@@ -76,3 +78,45 @@ public:
 };
 int pieces::whitePiecesCounter = 0;
 int pieces::blackPiecesCounter = 0;
+
+
+//The horizontal component of the chessboard
+enum HORIZONTAL{
+a,b,c,d,e,f,g,h , emptysquarex
+};
+//The vertical component of the chessboard
+enum VERTICAL{
+r1,r2,r3,r4,r5,r6,r7,r8 , emptysquarey
+};
+//The coordinates of the squares on the chess board
+struct SQUARECOORDINATE{
+	HORIZONTAL X;
+	VERTICAL Y;
+};
+
+
+
+
+istream& operator>>(istream& in , HORIZONTAL& x){
+	int input{};
+	in>>input;
+	x = static_cast<HORIZONTAL>(input);
+}
+
+istream& operator>>(istream& in , VERTICAL& y){
+	int input{};
+	in>>input;
+	y = static_cast<VERTICAL>(input);
+}
+
+SQUARECOORDINATE boardChess[8][8];
+
+for (int i = 2; i < 8; i++)
+{
+	for (int j  = 0; j < 8; j++)
+	{
+		boardChess[8][8].X = emptysquarex;
+		boardChess[8][8].Y = emptysquarey;
+	}
+}	
+	
