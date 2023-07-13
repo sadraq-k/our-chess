@@ -1,0 +1,3 @@
+D:/sadra/c++code/chess/our-chess/chess/cmake-build-debug/CMakeFiles/chess.dir
+D:/sadra/c++code/chess/our-chess/chess/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/sadra/c++code/chess/our-chess/chess/cmake-build-debug/CMakeFiles/rebuild_cache.dir
