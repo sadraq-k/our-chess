@@ -16,13 +16,17 @@ string pieceModel[6] = {
 
 class pieces
 {
+	friend int convertPiecesColorToInt(pieces& temp);
 private:
-	string pieceColor; //0 is black , 1 is white
+
 	string pieceRank;
 	static int whitePiecesCounter;
 	static int blackPiecesCounter;
 protected:
-	bool Availability[16];	/*
+	string pieceColor; //0 is black , 1 is white
+	
+	bool Availability[16]  = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};//Other than 0, the rest in Boolean is considered 1 or true
+							/*										  //All the pieces are there
 							pawn = 8,9,10,11,12,13,14,15
 							king = 0
 							queen = 1
@@ -79,6 +83,15 @@ public:
 int pieces::whitePiecesCounter = 0;
 int pieces::blackPiecesCounter = 0;
 
+int convertPiecesColorToInt(pieces& temp){
+	int color;
+	if(temp.pieceColor == "Black")
+		color = 1;
+	if(temp.pieceColor == "White")
+		color = 0;	
+	return color;
+}
+
 
 //The horizontal component of the chessboard
 enum HORIZONTAL{
@@ -88,13 +101,16 @@ a,b,c,d,e,f,g,h , emptysquarex
 enum VERTICAL{
 r1,r2,r3,r4,r5,r6,r7,r8 , emptysquarey
 };
+enum COLOR{
+	white,black,none
+};
 //The coordinates of the squares on the chess board
 struct SQUARECOORDINATE{
 	HORIZONTAL X;
 	VERTICAL Y;
+	COLOR colorofpiece;
+
 };
-
-
 
 
 istream& operator>>(istream& in , HORIZONTAL& x){
@@ -109,10 +125,16 @@ istream& operator>>(istream& in , VERTICAL& y){
 	y = static_cast<VERTICAL>(input);
 }
 
+istream& operator>>(istream& in , COLOR& colorpices){
+	int input{};
+	in>>input;
+	colorpices = static_cast<COLOR>(input);
+}
+
 SQUARECOORDINATE boardChess[8][8];
 
-void emptysquareboard(){
 
+void emptysquareboardAndAvailalbility(){
 
 for (int i = 2; i < 8; i++)
 {
@@ -120,7 +142,9 @@ for (int i = 2; i < 8; i++)
 	{
 		boardChess[i][j].X = emptysquarex;
 		boardChess[i][j].Y = emptysquarey;
+		boardChess[i][j].colorofpiece = none;
 	}
 }
+
 }	
 	
