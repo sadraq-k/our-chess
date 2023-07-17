@@ -31,7 +31,7 @@ class rook : public pieces
 				int end = max(RookPositon.Y , RookDestination.Y )-1;
 				for(int i = start ; i<=end ; i++)
                 {
-					if( !(static_cast<int>(boardChess[RookPositon.X][i].X ) == 8 && static_cast<int>(boardChess[RookPositon.X][i].Y) == 8) )
+					if( !(static_cast<int>(boardChess[static_cast<int>(RookPositon.X)][i].X ) == 8 && static_cast<int>(boardChess[static_cast<int>(RookPositon.X)][i].Y) == 8) )
                         check = false;
 						
 						break;
@@ -43,7 +43,7 @@ class rook : public pieces
 				int end = max(RookPositon.X , RookDestination.X )-1;
                 for (int  i = 0; i <= end; i++)
                 {
-                    if( !(static_cast<int>(boardChess[i][RookPositon.Y].X) == 8 && static_cast<int>(boardChess[i][RookPositon.Y].Y) == 8) )
+                    if( !(static_cast<int>(boardChess[i][static_cast<int>(RookPositon.Y)].X) == 8 && static_cast<int>(boardChess[i][static_cast<int>(RookPositon.Y)].Y) == 8) )
                         check = false;
 						break;
                 }
@@ -73,8 +73,11 @@ class rook : public pieces
 		if(WhichRook == 1 && Availability[4] == true)
 		{
             //It checks if the piece jump is correct and if it is possible for the piece to go to the destination specified by the task (is there a piece in the way or not)
-            if(checkMovement() &&  isPiecesBetween(Rook_Position[0],Temp))
+            if(checkMovement() &&  isPiecesBetween(Rook_Position[0],Temp)){
                 Rook_Destination[0] = {x , y , colorpiece};
+				boardChess[static_cast<int>(Rook_Destination[0].X)][static_cast<int>(Rook_Destination[0].Y)] ={x,y,colorpiece};
+				Rook_Position[0] = Rook_Destination[0];
+			}
 			else{
                 cout<<"ERROR: It is not possible to place this Piece in the place you entered  \nPlease enter again "<<endl;
                 movement();
@@ -85,8 +88,11 @@ class rook : public pieces
 		if(WhichRook == 2 && Availability[7] == true)
 		{   
             //It checks if the piece jump is correct and if it is possible for the piece to go to the destination specified by the task (is there a piece in the way or not)
-            if(checkMovement() &&  isPiecesBetween(Rook_Position[1],Temp))
+            if(checkMovement() &&  isPiecesBetween(Rook_Position[1],Temp)){
 			    Rook_Destination[1] = {x , y , colorpiece};
+				boardChess[static_cast<int>(Rook_Destination[1].X)][static_cast<int>(Rook_Destination[1].Y)] ={x,y,colorpiece};
+				Rook_Position[1] = Rook_Destination[1];
+			}
             else{
                 cout<<"ERROR: It is not possible to place this Piece in the place you entered  \nPlease enter again "<<endl;
                 movement();

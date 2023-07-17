@@ -95,11 +95,11 @@ int convertPiecesColorToInt(pieces& temp){
 
 //The horizontal component of the chessboard
 enum HORIZONTAL{
-a,b,c,d,e,f,g,h , emptysquarex
+a,b,c,d,e,f,g,h , emptysquarex , filledsquarex
 };
 //The vertical component of the chessboard
 enum VERTICAL{
-r1,r2,r3,r4,r5,r6,r7,r8 , emptysquarey
+r1,r2,r3,r4,r5,r6,r7,r8 , emptysquarey , filledsquarey
 };
 enum COLOR{
 	white,black,none
