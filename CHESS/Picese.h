@@ -8,17 +8,17 @@ namespace Chess
 
 	class Pieces
 	{
-		TeamColor team;
-		MyPiceses piece;
+		TeamColor color;
+		PicesesType type;
 
 	public:
-		Pieces(TeamColor tc, MyPiceses p);
+		Pieces(TeamColor c, PicesesType t);
 		~Pieces();
-		//virtual void Move() = 0;
-		void changeP(MyPiceses p);
+		//virtual void Move();
+		void changeP(PicesesType pt);
 		void changeT(TeamColor tc);
-		MyPiceses& BackPicType();
-
+		PicesesType& BackPicType();
+		std::string getPieceSymbol() const;
 	};
 
 }

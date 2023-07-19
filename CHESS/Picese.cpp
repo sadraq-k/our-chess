@@ -1,56 +1,91 @@
-#include"Pieces.h"
+#include"Picese.h"
 
 using namespace Chess;
 
-Pieces::Pieces(TeamColor tc, MyPiceses p) :team(tc), piece(p) {};
+Pieces::Pieces(TeamColor tc, PicesesType p) :color(tc), type(p) {};
 
 Pieces::~Pieces() {}
-void Chess::Pieces::changeP(MyPiceses p)
+void Chess::Pieces::changeP(PicesesType pt)
 {
-	piece = p;
+	type = pt;
 }
 void Chess::Pieces::changeT(TeamColor tc)
 {
-	team = tc;
+	color = tc;
 }
 
-MyPiceses& Pieces::BackPicType()
+PicesesType& Pieces::BackPicType()
 {
-	return piece;
+	return type;
+}
+
+std::string Chess::Pieces::getPieceSymbol() const
+{
+	switch (type)
+	{
+	case Chess::PicesesType::None:
+		return "  ";
+	case Chess::PicesesType::WPawn:
+		return "p ";
+	case Chess::PicesesType::WRock:
+		return "r ";
+	case Chess::PicesesType::WBishop:
+		return "b ";
+	case Chess::PicesesType::WKnight:
+		return "n ";
+	case Chess::PicesesType::WKing:
+		return "k ";
+	case Chess::PicesesType::WQueen:
+		return "q ";
+	case Chess::PicesesType::BPawn:
+		return "P ";
+	case Chess::PicesesType::BRock:
+		return "R ";
+	case Chess::PicesesType::BBishop:
+		return "B ";
+	case Chess::PicesesType::BKnight:
+		return "N ";
+	case Chess::PicesesType::BKing:
+		return "K ";
+	case Chess::PicesesType::BQueen:
+		return "Q ";
+	default:
+		return "ER";
+	}
 }
 
 
 
 
-/*std::string BackPices(MyPiceses mp)
+/*std::string BackPices(PicesesType mp) const
 {
 	switch (mp)
 	{
-	case Chess::MyPiceses::None:
+	case Chess::PicesesType::None:
 		return "  ";
-	case Chess::MyPiceses::WPawn:
+	case Chess::PicesesType::WPawn:
 		return "p ";
-	case Chess::MyPiceses::WRock:
+	case Chess::PicesesType::WRock:
 		return "r ";
-	case Chess::MyPiceses::WBishop:
+	case Chess::PicesesType::WBishop:
 		return "b ";
-	case Chess::MyPiceses::WKnight:
+	case Chess::PicesesType::WKnight:
 		return "n ";
-	case Chess::MyPiceses::WKing:
+	case Chess::PicesesType::WKing:
 		return "k ";
-	case Chess::MyPiceses::WQueen:
+	case Chess::PicesesType::WQueen:
 		return "q ";
-	case Chess::MyPiceses::BPawn:
+	case Chess::PicesesType::BPawn:
 		return "P ";
-	case Chess::MyPiceses::BRock:
+	case Chess::PicesesType::BRock:
 		return "R ";
-	case Chess::MyPiceses::BBishop:
+	case Chess::PicesesType::BBishop:
 		return "B ";
-	case Chess::MyPiceses::BKnight:
+	case Chess::PicesesType::BKnight:
 		return "N ";
-	case Chess::MyPiceses::BKing:
+	case Chess::PicesesType::BKing:
 		return "K ";
-	case Chess::MyPiceses::BQueen:
+	case Chess::PicesesType::BQueen:
 		return "Q ";
 	default:
 		return "ER";

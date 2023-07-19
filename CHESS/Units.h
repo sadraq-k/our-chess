@@ -8,8 +8,8 @@ namespace Chess {
 		White = 0,
 		Black = 1,
 	};
-
-	enum class MyPiceses
+	
+	enum class PicesesType
 	{
 		None = 0,
 		WPawn = 1,
@@ -27,8 +27,19 @@ namespace Chess {
 		BKing = 15,
 		BQueen = 16
 
-	};
-
+	}; /* TODO: would be like this in futre
+		enum class PicesesType
+		{
+			None = 0,
+			Pawn = 1,
+			Rock = 2,
+			Bishop = 3,
+			Knight = 4,
+			King = 5,
+			Queen = 6,
+		}
+		
+		*/
 	typedef enum this_is_my_char_list
 	{
 		a = 1, A = 1,

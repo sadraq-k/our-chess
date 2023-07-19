@@ -1,5 +1,6 @@
 #pragma once
 #include"Square.h"
+#include<vector>
 #include<iostream>
 
 #include<memory>
@@ -8,10 +9,9 @@ namespace Chess {
 
 	class Board
 	{
-		//MyPiceses piece;
-		Chess::Square* build = new Chess::Square[64];
-
-
+		//PicesesType piece;
+		Chess::Square* build;
+		//std::vector<Square> squares;  #star one
 		//Chess::Square build[64];
 		//std::unique_ptr<Chess::Square[]> build(new Chess::Square[64]);
 		//auto build = std::make_unique<Chess::Square[]>(64);
@@ -20,12 +20,10 @@ namespace Chess {
 	public:
 		static int number;
 
-
-
 		Board();
 		~Board();
 		void PrintBoard();
-		void changeScope(std::string& loc, std::string& where);
+		void ChangeScope(std::string& loc, std::string& where);
 
 	};
 

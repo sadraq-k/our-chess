@@ -1,6 +1,6 @@
 
 #include "Square.h"
-
+#include"Units.h"
 #include<iostream>
 #include<iomanip>
 #include<string>
@@ -11,54 +11,31 @@ using namespace Chess;
 
 
 void Square::print() {
-	std::cout << std::setw(3) << BackPices() << "|";
+	std::cout << std::setw(3) << getPieceSymbol() << "|";   
 }
 
-void Square::setP(std::unique_ptr<Pieces>& mp) {
+void Square::setP(std::unique_ptr<Pieces> mp) {
 	piece = std::move(mp);
 }
 
 
-std::string Square::BackPices()
+std::string Square::getPieceSymbol() const
 {
-	switch (piece->BackPicType())
-	{
-	case Chess::MyPiceses::None:
+	if (piece)
+		return piece->getPieceSymbol();
+	else
 		return "  ";
-	case Chess::MyPiceses::WPawn:
-		return "p ";
-	case Chess::MyPiceses::WRock:
-		return "r ";
-	case Chess::MyPiceses::WBishop:
-		return "b ";
-	case Chess::MyPiceses::WKnight:
-		return "n ";
-	case Chess::MyPiceses::WKing:
-		return "k ";
-	case Chess::MyPiceses::WQueen:
-		return "q ";
-	case Chess::MyPiceses::BPawn:
-		return "P ";
-	case Chess::MyPiceses::BRock:
-		return "R ";
-	case Chess::MyPiceses::BBishop:
-		return "B ";
-	case Chess::MyPiceses::BKnight:
-		return "N ";
-	case Chess::MyPiceses::BKing:
-		return "K ";
-	case Chess::MyPiceses::BQueen:
-		return "Q ";
-	default:
-		return "ER";
-
-	}
+		
+}
+std::unique_ptr<Pieces>& Square::getPiece() {
+	return piece;
 }
 
 
 
 Chess::Square::Square()
 {
+	piece = std::make_unique<Pieces>(Chess::TeamColor::NONE, Chess::PicesesType::BBishop);
 }
 
 Chess::Square::~Square()
@@ -70,5 +47,4 @@ void Chess::Square::setRC(int r, int c)
 	row = r;
 	column = c;
 }
-
 

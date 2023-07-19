@@ -1,6 +1,6 @@
 #pragma once
 #include"Units.h"
-#include"Pieces.h"
+#include"Picese.h"
 #include<string>
 #include<memory>
 namespace Chess {
@@ -10,18 +10,22 @@ namespace Chess {
 
 	class Square
 	{
-		int row;
+		int row; 
 		int column;
-		//Chess::MyPiceses piece;
+		//Chess::PicesesType piece;
 		//Pieces* piece;
 		std::unique_ptr<Pieces> piece;
 	public:
+		std::unique_ptr<Pieces>& getPiece();
 		Square();
 		~Square();
 		void setRC(int r, int c);
 		void print();
-		void setP(std::unique_ptr<Pieces>& mp);
-		std::string BackPices();
+		void setP(std::unique_ptr<Pieces> mp);
+
+		
+
+		std::string getPieceSymbol() const;
 	};
 
 }

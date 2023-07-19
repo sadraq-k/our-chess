@@ -8,8 +8,6 @@ namespace Chess
     {
         const std::string symbol = "b ";
 
-
-
-
+      
     };
 }
