@@ -19,6 +19,7 @@ namespace Chess
 		void changeT(TeamColor tc);
 		PicesesType& BackPicType();
 		std::string getPieceSymbol() const;
+		
 	};
 
 }

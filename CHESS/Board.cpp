@@ -64,12 +64,12 @@ void Board::PrintBoard() {
 		std::cout << "+---";
 	std::cout << "+"; EL;
 	for (int y = 0; y < 8; y++) {
-		std::cout << "\t\t" << y << " |";
+		std::cout << "\t\t" << y+1 << " |";
 
 		for (int x = 0; x < 8; x++) {
 			build[y * 8 + x].print(); 
 		}
-		std::cout << " " << y;
+		std::cout << " " << y+1;
 		EL;
 		std::cout << "\t\t  ";
 		for (int x = 0; x < 8; x++)
@@ -80,7 +80,7 @@ void Board::PrintBoard() {
 	std::cout << "\t\t" << "    a   b   c   d   e   f   g   h"; EL;
 }
 
-/*
+
 void Board::ChangeScope(std::string& loc, std::string& where)
 {
 	//int x = loc[0] - 96;
@@ -88,9 +88,9 @@ void Board::ChangeScope(std::string& loc, std::string& where)
 
 		// Convert the locations to row and column indices
 		int row1 = loc[1] - '1';
-		int col1 = loc[0] - 'a';
+		int col1 = tolower(loc[0]) - 'a';
 		int row2 = where[1] - '1';
-		int col2 = where[0] - 'a';
+		int col2 = tolower(where[0]) - 'a';
 
 		// Perform bounds checking to ensure the indices are within the valid range
 		if (row1 < 0 || row1 >= 8 || col1 < 0 || col1 >= 8 ||
@@ -104,19 +104,20 @@ void Board::ChangeScope(std::string& loc, std::string& where)
 		Square& square2 = build[row2 * 8 + col2];
 
 		// Check if both squares are valid and one has a piece while the other is empty
-		std::unique_ptr<Piece>& piece1 = square1.getPiece();
-		std::unique_ptr<Piece>& piece2 = square2.getPiece();
-
-		if (piece1 && !piece2) {
-			piece2 = std::move(piece1);
-			std::cout << "Piece moved successfully." << std::endl;
-		} else {
+		if (!square1.IsPiecesEmpty() && square2.IsPiecesEmpty()) {
+			// Swap the pieces
+			std::unique_ptr<Pieces>& piece1 = square1.getPiece();
+			std::unique_ptr<Pieces>& piece2 = square2.getPiece();
+			piece1.swap(piece2);
+			//std::cout << "Piece moved successfully." << std::endl;
+		}
+		else {
 			std::cout << "Invalid move. Please try again." << std::endl;
 		}
 
-	}
 }
-*/
+
+
 	
 
 

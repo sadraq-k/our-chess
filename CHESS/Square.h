@@ -16,6 +16,7 @@ namespace Chess {
 		//Pieces* piece;
 		std::unique_ptr<Pieces> piece;
 	public:
+		bool IsPiecesEmpty();
 		std::unique_ptr<Pieces>& getPiece();
 		Square();
 		~Square();

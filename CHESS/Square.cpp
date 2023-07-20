@@ -48,3 +48,6 @@ void Chess::Square::setRC(int r, int c)
 	column = c;
 }
 
+bool Square::IsPiecesEmpty() {
+	return (piece->BackPicType() == PicesesType::None); 
+}
