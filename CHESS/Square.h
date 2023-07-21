@@ -14,8 +14,9 @@ namespace Chess {
 		int column;
 		//Chess::PicesesType piece;
 		//Pieces* piece;
-		std::unique_ptr<Pieces> piece;
+		
 	public:
+		std::unique_ptr<Pieces> piece;
 		bool IsPiecesEmpty();
 		std::unique_ptr<Pieces>& getPiece();
 		Square();
@@ -23,6 +24,13 @@ namespace Chess {
 		void setRC(int r, int c);
 		void print();
 		void setP(std::unique_ptr<Pieces> mp);
+
+		TeamColor getColor(){
+			return piece->Chess::Pieces::getColor();
+		}
+		PicesesType getType(){
+			return piece->Chess::Pieces::getType();
+		}
 
 		
 
