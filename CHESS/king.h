@@ -11,6 +11,7 @@ namespace Chess {
 public:
     king(Square*pp = nullptr):Chess::Pieces(pp->getColor(), pp->getType()){};
     king() :Pieces(Chess::TeamColor::NONE, Chess::PicesesType::None) {};
+    king(TeamColor t) :Pieces(t, PicesesType::None) {};
     bool Move();
     };
 

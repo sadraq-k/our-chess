@@ -23,23 +23,23 @@ if( pt == Chess::PicesesType::BBishop || pt == Chess::PicesesType::WBishop){
 	Chess::Bishop bishop(&squareTemp);
 	piece = &bishop;
 }
-else if (std::tolower(type) == 'k') {
+else if (pt == Chess::PicesesType::BKing || pt == Chess::PicesesType::WKing) {
 	Chess::king king(&squareTemp);
 	piece = &king;
 }
-else if (std::tolower(type) == 'n') {
+else if (pt == Chess::PicesesType::BKnight || pt == Chess::PicesesType::WKnight) {
 	Chess::Knight knight(&squareTemp);
 	piece = &knight;
 }
-else if (std::tolower(type) == 'p') {
+else if (pt == Chess::PicesesType::BPawn || pt == Chess::PicesesType::WPawn) {
 	Chess::Pawn pawn(&squareTemp);
 	piece = &pawn;
 }
-else if (std::tolower(type) == 'q') {
+else if (pt == Chess::PicesesType::BQueen || pt == Chess::PicesesType::WQueen) {
 	Chess::Queen queen(&squareTemp);
 	piece = &queen;
 }
-else if (std::tolower(type) == 'r') {
+else if (pt == Chess::PicesesType::BRock || pt == Chess::PicesesType::WRock) {
 	Chess::Rock rock(&squareTemp);
 	piece = &rock;
 }

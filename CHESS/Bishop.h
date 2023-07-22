@@ -11,6 +11,7 @@ namespace Chess
 public:
     Bishop(Square*pp = nullptr):Chess::Pieces(pp->getColor(), pp->getType()){};
     Bishop() :Pieces(Chess::TeamColor::NONE, Chess::PicesesType::None) {};
+    Bishop(TeamColor t) :Pieces(t, PicesesType::None) {};
   bool Move();
       
     };

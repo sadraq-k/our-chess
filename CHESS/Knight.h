@@ -9,6 +9,7 @@ namespace Chess {
 public:
     Knight(Square*pp = nullptr):Chess::Pieces(pp->getColor(), pp->getType()){};
     Knight() :Pieces(Chess::TeamColor::NONE, Chess::PicesesType::None) {};
+    Knight(TeamColor t) :Pieces(t, PicesesType::None) {};
     };
 bool Move();
 }
