@@ -4,6 +4,7 @@
 #include<iostream>
 #include<iomanip>
 #include<string>
+#include"Queen.h"
 using namespace Chess;
 
 
@@ -35,7 +36,7 @@ std::unique_ptr<Pieces>& Square::getPiece() {
 
 Chess::Square::Square()
 {
-	piece = std::make_unique<Pieces>(Chess::TeamColor::NONE, Chess::PicesesType::BBishop);
+	piece = std::make_unique<Chess::Queen>(Chess::TeamColor::NONE, Chess::PicesesType::BBishop);
 }
 
 Chess::Square::~Square()
