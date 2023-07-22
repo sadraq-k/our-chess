@@ -22,25 +22,28 @@ if(std::tolower(type) == 'b'){
 	Chess::Bishop bishop(&squareTemp);
 	piece = &bishop;
 }
-if(std::tolower(type) == 'k'){
+else if (std::tolower(type) == 'k') {
 	Chess::king king(&squareTemp);
 	piece = &king;
 }
-if(std::tolower(type) == 'n'){
+else if (std::tolower(type) == 'n') {
 	Chess::Knight knight(&squareTemp);
 	piece = &knight;
 }
-if(std::tolower(type) == 'p'){
-	Chess::Pawn pawn(&squareTemp);	
+else if (std::tolower(type) == 'p') {
+	Chess::Pawn pawn(&squareTemp);
 	piece = &pawn;
 }
-if(std::tolower(type) == 'q'){
+else if (std::tolower(type) == 'q') {
 	Chess::Queen queen(&squareTemp);
 	piece = &queen;
 }
-if(std::tolower(type) == 'r'){
+else if (std::tolower(type) == 'r') {
 	Chess::Rock rock(&squareTemp);
 	piece = &rock;
+}
+else {
+	std::cerr << "wrong Piece type!";
 }
 
 checkmove  = piece->Move();
