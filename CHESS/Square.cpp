@@ -28,6 +28,7 @@ std::string Square::getPieceSymbol() const
 		return "  ";
 		
 }
+
 std::unique_ptr<Pieces>& Square::getPiece() {
 	return piece;
 }
@@ -51,4 +52,12 @@ void Chess::Square::setRC(int r, int c)
 
 bool Square::IsPiecesEmpty() {
 	return (piece->BackPicType() == PicesesType::None); 
+}
+
+PicesesType Square::getType() {
+		return piece->Chess::Pieces::getType();
+}
+
+TeamColor Square::getColor() {
+	return piece->Chess::Pieces::getColor();
 }

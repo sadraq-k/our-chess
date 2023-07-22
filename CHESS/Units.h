@@ -9,7 +9,7 @@ namespace Chess {
 		Black = 1,
 	};
 	
-	enum class PicesesType
+	typedef enum class PicesesType
 	{
 		None = 0,
 		WPawn = 1,
@@ -27,7 +27,7 @@ namespace Chess {
 		BKing = 15,
 		BQueen = 16
 
-	}; /* TODO: would be like this in futre
+	}_PT_; /* TODO: would be like this in futre
 		enum class PicesesType
 		{
 			None = 0,

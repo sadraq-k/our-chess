@@ -9,16 +9,17 @@
 #include<sstream>
 
 
-bool input( Chess::Square& squareTemp){
+bool input(Chess::Square& squareTemp){
 	bool checkmove;
 
 	Chess::Pieces *piece = nullptr;
 	
 	std::istringstream iss(squareTemp.getPieceSymbol());
 	char type;
-	iss>>type;
+	iss >> type;
+	Chess::PicesesType pt = squareTemp.getType();
 
-if(std::tolower(type) == 'b'){
+if( pt == Chess::PicesesType::BBishop || pt == Chess::PicesesType::WBishop){
 	Chess::Bishop bishop(&squareTemp);
 	piece = &bishop;
 }

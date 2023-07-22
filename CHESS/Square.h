@@ -25,12 +25,8 @@ namespace Chess {
 		void print();
 		void setP(std::unique_ptr<Pieces> mp);
 
-		TeamColor getColor(){
-			return piece->Chess::Pieces::getColor();
-		}
-		PicesesType getType(){
-			return piece->Chess::Pieces::getType();
-		}
+		TeamColor getColor();
+		PicesesType getType();
 
 		
 
