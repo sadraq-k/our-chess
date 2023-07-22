@@ -1,5 +1,13 @@
 #pragma once
 #include"Square.h"
+//
+#include"Rock.h"
+#include"Queen.h"
+#include"king.h"
+#include"Knight.h"
+#include"Pawn.h"
+#include"Bishop.h"
+//
 #include<vector>
 #include<iostream>
 

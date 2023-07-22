@@ -7,6 +7,7 @@ namespace Chess
 	{
 	public:
 		Rock(Square*pp = nullptr):Chess::Pieces(pp->getColor(), pp->getType()){};
+		Rock() :Pieces(Chess::TeamColor::NONE, Chess::PicesesType::None) {};
 
 bool Move();
 	};

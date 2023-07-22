@@ -25,6 +25,9 @@ void Board::putAllPieces() {
 	//std::unique_ptr<Pieces> pmp{ &mp };
 	PicesesType Blist[8] = { PicesesType::BRock,PicesesType::BKnight,PicesesType::BBishop,PicesesType::BKing,PicesesType::BQueen,PicesesType::BBishop,PicesesType::BKnight,PicesesType::BRock }; // black liat
 	PicesesType Wlist[8] = { PicesesType::WRock,PicesesType::WKnight,PicesesType::WBishop,PicesesType::WKing,PicesesType::WQueen,PicesesType::WBishop,PicesesType::WKnight,PicesesType::WRock }; // white list
+	//New Changes
+	Bishop b[4] = { (TeamColor::White,PicesesType::WBishop),(TeamColor::White,PicesesType::WBishop),(TeamColor::Black,PicesesType::BBishop),(TeamColor::Black,PicesesType::BBishop) };
+	//New Changes
 	for (int x = 0; x < 8; x++)
 	{
 		//mp.changeP(Blist[x]);
@@ -91,6 +94,7 @@ void Board::ChangeScope(std::string& loc, std::string& where)
 		int col1 = tolower(loc[0]) - 'a';
 		int row2 = where[1] - '1';
 		int col2 = tolower(where[0]) - 'a';
+		
 
 		// Perform bounds checking to ensure the indices are within the valid range
 		if (row1 < 0 || row1 >= 8 || col1 < 0 || col1 >= 8 ||
@@ -102,6 +106,7 @@ void Board::ChangeScope(std::string& loc, std::string& where)
 		// Get the references to the squares
 		Square& square1 = build[row1 * 8 + col1];
 		Square& square2 = build[row2 * 8 + col2];
+
 
 		// Check if both squares are valid and one has a piece while the other is empty
 		if (!square1.IsPiecesEmpty() && square2.IsPiecesEmpty()) {

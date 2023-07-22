@@ -10,7 +10,7 @@ namespace Chess {
 
 public:
     Pawn(Square*pp = nullptr):Chess::Pieces(pp->getColor(), pp->getType()){};
-
+    Pawn() :Pieces(Chess::TeamColor::NONE, Chess::PicesesType::None) {};
 bool Move();
     };
 
