@@ -24,6 +24,9 @@ namespace Chess {
 		~Board();
 		void PrintBoard();
 		void ChangeScope(std::string& loc, std::string& where);
+		Chess::Square& getSquare(){
+			return *build;
+		}
 
 	};
 

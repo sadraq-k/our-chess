@@ -53,6 +53,15 @@ std::string Chess::Pieces::getPieceSymbol() const
 		return "ER";
 	}
 }
+TeamColor Chess::Pieces::getColor(){
+			return color;
+	}
+PicesesType Chess::Pieces::getType(){
+			return type;
+	}
+bool Chess::Pieces::Move(){
+	;
+}	
 
 
 
