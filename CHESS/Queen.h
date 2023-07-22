@@ -10,7 +10,7 @@ namespace Chess {
     public:
     Queen(Square*pp = nullptr):Chess::Pieces(pp->getColor(), pp->getType()){};
     Queen() :Pieces(Chess::TeamColor::NONE, Chess::PicesesType::None) {}; // in constuctor bashe
-    Queen(TeamColor t) :Pieces(t, PicesesType::None);
+    Queen(TeamColor t) :Pieces(t, PicesesType::None){};
 bool Move();
 
     };
