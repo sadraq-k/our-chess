@@ -15,27 +15,27 @@ bool input(Chess::Square& squareTemp,MoveType& MT) {
 	//iss >> type;
 	Chess::PicesesType pt = squareTemp.getType();
 
-	if (pt == Chess::PicesesType::BBishop || pt == Chess::PicesesType::WBishop) {
+	if (pt == Chess::PicesesType::Bishop ) {
 		Chess::Bishop bishop(&squareTemp);
 		piece = &bishop;
 	}
-	else if (pt == Chess::PicesesType::BKing || pt == Chess::PicesesType::WKing) {
+	else if (pt == Chess::PicesesType::King ) {
 		Chess::king king(&squareTemp);
 		piece = &king;
 	}
-	else if (pt == Chess::PicesesType::BKnight || pt == Chess::PicesesType::WKnight) {
+	else if (pt == Chess::PicesesType::Knight ) {
 		Chess::Knight knight(&squareTemp);
 		piece = &knight;
 	}
-	else if (pt == Chess::PicesesType::BPawn || pt == Chess::PicesesType::WPawn) {
+	else if (pt == Chess::PicesesType::Pawn ) {
 		Chess::Pawn pawn(&squareTemp);
 		piece = &pawn;
 	}
-	else if (pt == Chess::PicesesType::BQueen || pt == Chess::PicesesType::WQueen) {
+	else if (pt == Chess::PicesesType::Queen ) {
 		Chess::Queen queen(&squareTemp);
 		piece = &queen;
 	}
-	else if (pt == Chess::PicesesType::BRock || pt == Chess::PicesesType::WRock) {
+	else if (pt == Chess::PicesesType::Rock ) {
 		Chess::Rock rock(&squareTemp);
 		piece = &rock;
 	}
@@ -66,20 +66,20 @@ Board::~Board() {
 void Board::putAllPieces() {
 	//Pieces mp(TeamColor::Black, PicesesType::WPawn); 
 	//std::unique_ptr<Pieces> pmp{ &mp };
-	PicesesType Blist[8] = { PicesesType::BRock,PicesesType::BKnight,PicesesType::BBishop,PicesesType::BKing,PicesesType::BQueen,PicesesType::BBishop,PicesesType::BKnight,PicesesType::BRock }; // black liat
-	PicesesType Wlist[8] = { PicesesType::WRock,PicesesType::WKnight,PicesesType::WBishop,PicesesType::WKing,PicesesType::WQueen,PicesesType::WBishop,PicesesType::WKnight,PicesesType::WRock }; // white list
+	PicesesType list[8] = { PicesesType::Rock,PicesesType::Knight,PicesesType::Bishop,PicesesType::King,PicesesType::Queen,PicesesType::Bishop,PicesesType::Knight,PicesesType::Rock }; // black liat
+	//PicesesType Wlist[8] = { PicesesType::WRock,PicesesType::WKnight,PicesesType::WBishop,PicesesType::WKing,PicesesType::WQueen,PicesesType::WBishop,PicesesType::WKnight,PicesesType::WRock }; // white list
 	//New Changes
-	Bishop b[4] = { (TeamColor::White,PicesesType::WBishop),(TeamColor::White,PicesesType::WBishop),(TeamColor::Black,PicesesType::BBishop),(TeamColor::Black,PicesesType::BBishop) };
+	Bishop b[4] = { (TeamColor::White),(TeamColor::White),(TeamColor::Black),(TeamColor::Black) };
 	//New Changes
 	for (int x = 0; x < 8; x++)
 	{
 		//mp.changeP(Blist[x]);
-		build[x].setP(std::make_unique<Pieces>(TeamColor::Black, Blist[x]));
+		build[x].setP(std::make_unique<Pieces>(TeamColor::Black, list[x]));
 		
 	}
 	//mp.changeP(PicesesType::BPawn);
 
-	for (int x = 0; x < 8; x++) build[x + 8].setP(std::make_unique<Pieces>(TeamColor::Black,Chess::PicesesType::BPawn));
+	for (int x = 0; x < 8; x++) build[x + 8].setP(std::make_unique<Pieces>(TeamColor::Black,Chess::PicesesType::Pawn));
 	//mp.changeT(Chess::TeamColor::NONE);
 	//mp.changeP(PicesesType::None);
 
@@ -91,12 +91,12 @@ void Board::putAllPieces() {
 	//mp.changeP(PicesesType::WPawn);
 	for (int x = 0; x < 8; x++)
 	{
-		build[x + 48].setP(std::make_unique<Pieces>(TeamColor::White, Chess::PicesesType::WPawn));
+		build[x + 48].setP(std::make_unique<Pieces>(TeamColor::White, Chess::PicesesType::Pawn));
 	}
 	for (int x = 0; x < 8; x++)
 	{
 		//mp.changeP(Wlist[x]);
-		build[x + 56].setP(std::make_unique<Pieces>(TeamColor::White, Wlist[x]));
+		build[x + 56].setP(std::make_unique<Pieces>(TeamColor::White, list[x]));
 	}
 	//pmp = nullptr;
 }
