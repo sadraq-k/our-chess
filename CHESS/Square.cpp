@@ -4,6 +4,7 @@
 #include<iostream>
 #include<iomanip>
 #include<string>
+#include"Queen.h"
 using namespace Chess;
 
 
@@ -22,11 +23,12 @@ void Square::setP(std::unique_ptr<Pieces> mp) {
 std::string Square::getPieceSymbol() const
 {
 	if (piece)
-		return piece->getPieceSymbol();
+		return piece->getPieceSymbol(int(piece->getColor()));
 	else
 		return "  ";
 		
 }
+
 std::unique_ptr<Pieces>& Square::getPiece() {
 	return piece;
 }
@@ -35,7 +37,7 @@ std::unique_ptr<Pieces>& Square::getPiece() {
 
 Chess::Square::Square()
 {
-	piece = std::make_unique<Pieces>(Chess::TeamColor::NONE, Chess::PicesesType::BBishop);
+	piece = std::make_unique<Chess::Pieces>(Chess::TeamColor::NONE, Chess::PicesesType::None);
 }
 
 Chess::Square::~Square()
@@ -50,4 +52,12 @@ void Chess::Square::setRC(int r, int c)
 
 bool Square::IsPiecesEmpty() {
 	return (piece->BackPicType() == PicesesType::None); 
+}
+
+PicesesType Square::getType() {
+		return piece->Chess::Pieces::getType();
+}
+
+TeamColor Square::getColor() {
+	return piece->Chess::Pieces::getColor();
 }

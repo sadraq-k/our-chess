@@ -1,11 +1,15 @@
 #pragma once
 #include"Picese.h"
+#include"Square.h"
 namespace Chess {
-    class WKnight :
-        private Pieces
+    class Knight :
+        public Pieces
     {
-        const std::string symbol = "n "; // or const Chess::MyPieces symbol = Chess::MyPieces::WPawn;
 
+    public:
+        Knight(Square* pp = nullptr) :Chess::Pieces(pp->getColor(), pp->getType()) {};
+        Knight() :Pieces(Chess::TeamColor::NONE, Chess::PicesesType::Knight) {};
+        Knight(TeamColor t) :Pieces(t, PicesesType::Knight) {};
+        bool Move();
     };
-
 }

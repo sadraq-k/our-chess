@@ -1,5 +1,13 @@
 #pragma once
 #include"Square.h"
+//
+#include"Rock.h"
+#include"Queen.h"
+#include"king.h"
+#include"Knight.h"
+#include"Pawn.h"
+#include"Bishops.h"
+//
 #include<vector>
 #include<iostream>
 
@@ -24,6 +32,9 @@ namespace Chess {
 		~Board();
 		void PrintBoard();
 		void ChangeScope(std::string& loc, std::string& where);
+		Chess::Square& getSquare(){
+			return *build;
+		}
 
 	};
 

@@ -1,5 +1,13 @@
-
 #include"Board.h"
+#include"Picese.h"
+#include"Rock.h"
+#include"Queen.h"
+#include"king.h"
+#include"Knight.h"
+#include"Pawn.h"
+#include"Bishops.h"
+#include<sstream>
+
 
 
 int main()

@@ -19,9 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bishop.cpp" />
+    <ClCompile Include="Bishops.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="CHESS.cpp" />
+    <ClCompile Include="king.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Picese.cpp" />
@@ -30,7 +31,7 @@
     <ClCompile Include="Square.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bishop.h" />
+    <ClInclude Include="Bishops.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="king.h" />
     <ClInclude Include="Knight.h" />
