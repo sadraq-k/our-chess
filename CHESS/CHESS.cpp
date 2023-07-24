@@ -5,7 +5,7 @@
 #include"king.h"
 #include"Knight.h"
 #include"Pawn.h"
-#include"Bishop.h"
+#include"Bishops.h"
 #include<sstream>
 
 
@@ -23,10 +23,7 @@ int main()
 		std::cout << "Where ? ";
 		std::cin >> where;
 		system("cls");
-		if(input(mybored.getSquare()))
-			mybored.ChangeScope(loc, where);
-		else
-			std::cout<<"The piece cannot move there"<<std::endl;
+		mybored.ChangeScope(loc, where);
 		mybored.PrintBoard();
 	}
 	return 0;

@@ -6,7 +6,7 @@
 #include"king.h"
 #include"Knight.h"
 #include"Pawn.h"
-#include"Bishop.h"
+#include"Bishops.h"
 //
 #include<vector>
 #include<iostream>

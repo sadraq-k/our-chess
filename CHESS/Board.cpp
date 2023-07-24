@@ -174,6 +174,7 @@ void Board::ChangeScope(std::string& loc, std::string& where)
 			std::unique_ptr<Pieces>& piece2 = square2.getPiece();
 			piece1.swap(piece2);
 			Round++;
+			square1.setP(std::make_unique<Pieces>(TeamColor::NONE, Chess::PicesesType::None));
 		}
 		else
 		{

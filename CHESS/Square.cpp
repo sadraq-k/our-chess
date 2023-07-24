@@ -23,7 +23,7 @@ void Square::setP(std::unique_ptr<Pieces> mp) {
 std::string Square::getPieceSymbol() const
 {
 	if (piece)
-		return piece->getPieceSymbol();
+		return piece->getPieceSymbol(int(piece->getColor()));
 	else
 		return "  ";
 		
@@ -37,7 +37,7 @@ std::unique_ptr<Pieces>& Square::getPiece() {
 
 Chess::Square::Square()
 {
-	piece = std::make_unique<Chess::Queen>(Chess::TeamColor::NONE, Chess::PicesesType::BBishop);
+	piece = std::make_unique<Chess::Pieces>(Chess::TeamColor::NONE, Chess::PicesesType::None);
 }
 
 Chess::Square::~Square()

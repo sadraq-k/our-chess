@@ -19,38 +19,50 @@ PicesesType& Pieces::BackPicType()
 	return type;
 }
 
-std::string Chess::Pieces::getPieceSymbol() const
+std::string Chess::Pieces::getPieceSymbol(int isBlack) const
 {
-	switch (type)
+	if (isBlack) {
+		switch (type)
+		{
+		case Chess::PicesesType::None:
+			return "  ";
+		case Chess::PicesesType::Pawn:
+			return "p ";
+		case Chess::PicesesType::Rock:
+			return "r ";
+		case Chess::PicesesType::Bishop:
+			return "b ";
+		case Chess::PicesesType::Knight:
+			return "n ";
+		case Chess::PicesesType::King:
+			return "k ";
+		case Chess::PicesesType::Queen:
+			return "q ";
+		default:
+			return "ER";
+		}
+	}
+	else
 	{
-	case Chess::PicesesType::None:
-		return "  ";
-	case Chess::PicesesType::WPawn:
-		return "p ";
-	case Chess::PicesesType::WRock:
-		return "r ";
-	case Chess::PicesesType::WBishop:
-		return "b ";
-	case Chess::PicesesType::WKnight:
-		return "n ";
-	case Chess::PicesesType::WKing:
-		return "k ";
-	case Chess::PicesesType::WQueen:
-		return "q ";
-	case Chess::PicesesType::BPawn:
-		return "P ";
-	case Chess::PicesesType::BRock:
-		return "R ";
-	case Chess::PicesesType::BBishop:
-		return "B ";
-	case Chess::PicesesType::BKnight:
-		return "N ";
-	case Chess::PicesesType::BKing:
-		return "K ";
-	case Chess::PicesesType::BQueen:
-		return "Q ";
-	default:
-		return "ER";
+		switch (type)
+		{
+		case Chess::PicesesType::None:
+			return "  ";
+		case Chess::PicesesType::Pawn:
+			return "P ";
+		case Chess::PicesesType::Rock:
+			return "R ";
+		case Chess::PicesesType::Bishop:
+			return "B ";
+		case Chess::PicesesType::Knight:
+			return "N ";
+		case Chess::PicesesType::King:
+			return "K ";
+		case Chess::PicesesType::Queen:
+			return "Q ";
+		default:
+			return "ER";
+		}
 	}
 }
 TeamColor Chess::Pieces::getColor(){
@@ -59,8 +71,9 @@ TeamColor Chess::Pieces::getColor(){
 PicesesType Chess::Pieces::getType(){
 			return type;
 	}
+
 bool Chess::Pieces::Move(){
-	;
+	return true;
 }	
 
 

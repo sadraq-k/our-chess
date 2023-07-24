@@ -18,7 +18,7 @@ namespace Chess
 		void changeP(PicesesType pt);
 		void changeT(TeamColor tc);
 		PicesesType& BackPicType();
-		std::string getPieceSymbol() const;
+		std::string getPieceSymbol(int isBlack) const;
 		virtual bool Move();
 		TeamColor getColor();
 		PicesesType getType();
