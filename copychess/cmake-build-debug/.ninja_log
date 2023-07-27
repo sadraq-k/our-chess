@@ -1,0 +1,12 @@
+# ninja log v5
+8	448	7121860609101054	CMakeFiles/copychess.dir/picese.cpp.obj	1c65e1183a6bccb1
+13	456	7121860609172589	CMakeFiles/copychess.dir/king.cpp.obj	682ba5230ddea635
+17	461	7121860609233045	CMakeFiles/copychess.dir/rock.cpp.obj	472d7acd3b073b6a
+2	466	7121860609294929	CMakeFiles/copychess.dir/bishops.cpp.obj	cdd04b2f55baedaf
+15	476	7121860609387108	CMakeFiles/copychess.dir/pawn.cpp.obj	874255f392d756fd
+10	485	7121860609475745	CMakeFiles/copychess.dir/knight.cpp.obj	f73464b80b574b08
+19	512	7121860609752779	CMakeFiles/copychess.dir/queen.cpp.obj	df952d2383cd93fd
+3	516	7121860609804249	CMakeFiles/copychess.dir/chess.cpp.obj	e08564330a0d7ef3
+6	537	7121860609994413	CMakeFiles/copychess.dir/square.cpp.obj	a2d4c8d4856ada9a
+2	299	7121861083016217	CMakeFiles/copychess.dir/board.cpp.obj	7c225b28152d75ea
+299	369	7121861083686913	copychess.exe	d5dd5e6831a040e2
