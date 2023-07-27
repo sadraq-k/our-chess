@@ -183,7 +183,7 @@ void Board::ChangeScope(std::string& loc, std::string& where)
 
 }
 
-//really
+//really let try if it work
 	
 
 
