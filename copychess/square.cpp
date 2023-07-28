@@ -51,8 +51,8 @@ Chess::Square::~Square()
 
 void Chess::Square::setRC(int r, int c)
 {
-    row = r;
-    column = c;
+    row = r; //x
+    column = c; //y
 }
 
 bool Square::IsPiecesEmpty() {

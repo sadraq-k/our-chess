@@ -8,7 +8,8 @@ using namespace Chess;
 int Board::number = 0;
 
 static int Round = 0;
-bool input(Chess::Square& squareTemp,MoveType& MT) {
+bool input(Chess::Square& squareTemp,MoveType& MT)
+{
     bool checkmove;
 
     Chess::Pieces* piece = nullptr;
@@ -18,31 +19,38 @@ bool input(Chess::Square& squareTemp,MoveType& MT) {
     //iss >> type;
     Chess::PicesesType pt = squareTemp.getType();
 
-    if (pt == Chess::PicesesType::Bishop ) {
+    if (pt == Chess::PicesesType::Bishop )
+    {
         Chess::Bishop bishop(&squareTemp);
         piece = &bishop;
     }
-    else if (pt == Chess::PicesesType::King ) {
+    else if (pt == Chess::PicesesType::King )
+    {
         Chess::king king(&squareTemp);
         piece = &king;
     }
-    else if (pt == Chess::PicesesType::Knight ) {
+    else if (pt == Chess::PicesesType::Knight )
+    {
         Chess::Knight knight(&squareTemp);
         piece = &knight;
     }
-    else if (pt == Chess::PicesesType::Pawn ) {
+    else if (pt == Chess::PicesesType::Pawn )
+    {
         Chess::Pawn pawn(&squareTemp);
         piece = &pawn;
     }
-    else if (pt == Chess::PicesesType::Queen ) {
+    else if (pt == Chess::PicesesType::Queen )
+    {
         Chess::Queen queen(&squareTemp);
         piece = &queen;
     }
-    else if (pt == Chess::PicesesType::Rock ) {
+    else if (pt == Chess::PicesesType::Rock )
+    {
         Chess::Rock rock(&squareTemp);
         piece = &rock;
     }
-    else {
+    else
+    {
         std::cerr << "wrong Piece type!";
     }
 
@@ -50,16 +58,21 @@ bool input(Chess::Square& squareTemp,MoveType& MT) {
     return checkmove;
 }
 
-Board::Board() {
+Board::Board()
+{
     build = new Chess::Square[64]();
-    for (int y = 0; y < 8; y++) {
-        for (int x = 0; x < 8; x++) {
+    for (int y = 0 ; y < 8 ; y++)
+    {
+        for (int x = 0 ; x < 8 ; x++)
+        {
             build[y * 8 + x].setRC(x + 1, y + 1);
         }
     }
     putAllPieces();
 }
-Board::~Board() {
+
+Board::~Board()
+{
 
     build = nullptr;
     for (int i = 0; i < 8; ++i)
@@ -112,10 +125,12 @@ void Board::PrintBoard() {
     for (int x = 0; x < 8; x++)
         std::cout << "+---";
     std::cout << "+"; EL;
-    for (int y = 0; y < 8; y++) {
+    for (int y = 0; y < 8; y++)
+    {
         std::cout << "\t\t" << y+1 << " |";
 
-        for (int x = 0; x < 8; x++) {
+        for (int x = 0; x < 8; x++)
+        {
             build[y * 8 + x].print();
         }
         std::cout << " " << y+1;
@@ -145,10 +160,13 @@ void Board::ChangeScope(std::string& loc, std::string& where)
 
     // Perform bounds checking to ensure the indices are within the valid range
     if (row1 < 0 || row1 >= 8 || col1 < 0 || col1 >= 8 ||
-        row2 < 0 || row2 >= 8 || col2 < 0 || col2 >= 8) {
+        row2 < 0 || row2 >= 8 || col2 < 0 || col2 >= 8)
+    {
         std::cout << "Invalid square coordinates." << std::endl;
         return;
     }
+
+    std::runtime_error st("emshab");
 
     // Get the references to the squares
     Square& square1 = build[row1 * 8 + col1];

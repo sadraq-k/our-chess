@@ -1,3 +1,3 @@
-D:/sadra/c++code/copychess/cmake-build-debug/CMakeFiles/copychess.dir
-D:/sadra/c++code/copychess/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/sadra/c++code/copychess/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/sadra/c++code/chess/our-chess/copychess/cmake-build-debug/CMakeFiles/copychess.dir
+D:/sadra/c++code/chess/our-chess/copychess/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/sadra/c++code/chess/our-chess/copychess/cmake-build-debug/CMakeFiles/rebuild_cache.dir

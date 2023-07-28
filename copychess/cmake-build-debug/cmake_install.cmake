@@ -1,4 +1,4 @@
-# Install script for directory: D:/sadra/c++code/copychess
+# Install script for directory: D:/sadra/c++code/chess/our-chess/copychess
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/sadra/c++code/copychess/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/sadra/c++code/chess/our-chess/copychess/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

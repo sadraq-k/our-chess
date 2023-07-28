@@ -1,0 +1,3 @@
+"E:\New folder\CLion 2023.1.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\copychess.dir/objects.a
+E:\NEWFOL~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\copychess.dir/objects.a @CMakeFiles\copychess.dir\objects1
+E:\NEWFOL~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\copychess.dir/objects.a -Wl,--no-whole-archive -o copychess.exe -Wl,--out-implib,libcopychess.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\copychess.dir\linkLibs.rsp

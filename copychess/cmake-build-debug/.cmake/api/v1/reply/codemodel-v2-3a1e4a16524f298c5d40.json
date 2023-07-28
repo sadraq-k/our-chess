@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/sadra/c++code/copychess/cmake-build-debug",
-		"source" : "D:/sadra/c++code/copychess"
+		"build" : "D:/sadra/c++code/chess/our-chess/copychess/cmake-build-debug",
+		"source" : "D:/sadra/c++code/chess/our-chess/copychess"
 	},
 	"version" : 
 	{
