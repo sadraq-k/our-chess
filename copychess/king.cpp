@@ -10,5 +10,7 @@
 
 bool Chess::king::Move()
 {
+
     return true;
+    
 }
